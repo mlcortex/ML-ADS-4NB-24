@@ -20,4 +20,4 @@ O repositório está organizado nas seguintes pastas principais:
 - `DATASETS`: Conjunto de datasets fornecidos para uso nas aulas e projetos.
 - `NOTEBOOKS_AULAS`: Notebooks e materiais das aulas, organizados pelo professor.
 
-.
+..
