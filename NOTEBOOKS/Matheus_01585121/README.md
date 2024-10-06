@@ -2,5 +2,5 @@
 
 # Área de Interesse 
 
- Full Stack Desenvolvedor
+ Desenvolvedor Full Stack 
 
