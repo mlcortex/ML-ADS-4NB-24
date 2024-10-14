@@ -1,0 +1,34 @@
+import numpy as np # type: ignore
+
+valores = [4, 6, 3, 4, 5, 8, 4, 2]
+
+valor_maximo = np.max(valores)
+valor_minimo = np.min(valores)
+media = np.mean(valores)
+mediana = np.median(valores)
+desvio_padrao = np.std(valores)
+
+print(f'Valor máximo: {valor_maximo}')
+print(f'Valor mínimo: {valor_minimo}')
+print(f'Média aritmética: {media}')
+print(f'Mediana: {mediana}')
+print(f'Desvio padrão: {desvio_padrao}')
+
+Valor máximo: 8
+Valor mínimo: 2
+Média aritmética: 4.5
+Mediana: 4.0
+Desvio padrão: 1.7320508075688772
+
+pip install numpy
+
+
+Defaulting to user installation because normal site-packages is not writeable
+Collecting numpy
+  Downloading numpy-2.0.2-cp39-cp39-macosx_14_0_arm64.whl (5.3 MB)
+     |████████████████████████████████| 5.3 MB 1.2 MB/s eta 0:00:01
+Installing collected packages: numpy
+Successfully installed numpy-2.0.2
+WARNING: You are using pip version 21.2.4; however, version 24.2 is available.
+You should consider upgrading via the '/Library/Developer/CommandLineTools/usr/bin/python3 -m pip install --upgrade pip' command.
+Note: you may need to restart the kernel to use updated packages.
