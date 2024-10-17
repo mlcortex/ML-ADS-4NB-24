@@ -1,0 +1,6 @@
+# Nome Completo: <MARIANA CLARICE SILVA>
+
+## Área de Interesse
+<Ciência de Dados>
+
+## Informações Relevantes
