@@ -1,0 +1,110 @@
+# Importando bibliotecas
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# URL do dataset Wine
+url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data'
+
+# Nome das colunas em português BR
+column_names_pt_br = [
+    'classe',
+    'alcool',
+    'acido_malico',
+    'cinzas',
+    'alcalinidade_de_cinzas',
+    'magnesio',
+    'fenois_totais',
+    'flavanoides',
+    'fenois_nao_flavanoides',
+    'proantocianinas',
+    'intensidade_de_cor',
+    'matiz',
+    'od280_od315_de_vinhos_diluidos',
+    'prolina'
+]
+
+# Lendo o arquivo CSV com as colunas especificadas, definindo a coluna 'classe' como object
+vinhos = pd.read_csv(url, names=column_names_pt_br, dtype={'classe': object})
+
+# Visualizando as primeiras linhas do dataset
+vinhos.head()
+
+
+# Contagem das diferentes classes
+vinhos['classe'].value_counts()
+
+# Estatísticas descritivas das colunas álcool, ácido málico, magnésio e matiz
+vinhos[['alcool', 'acido_malico', 'magnesio', 'matiz']].describe()
+
+# Ajustando o estilo dos gráficos
+sns.set(style='whitegrid')
+
+# Criando boxplots para as colunas mencionadas
+fig, axes = plt.subplots(2, 2, figsize=(14, 10))
+
+# Boxplot para magnésio
+sns.boxplot(ax=axes[0, 0], data=vinhos, y='magnesio')
+axes[0, 0].set_title('Boxplot - Magnésio')
+
+# Boxplot para prolina
+sns.boxplot(ax=axes[0, 1], data=vinhos, y='prolina')
+axes[0, 1].set_title('Boxplot - Prolina')
+
+# Boxplot para cinzas
+sns.boxplot(ax=axes[1, 0], data=vinhos, y='cinzas')
+axes[1, 0].set_title('Boxplot - Cinzas')
+
+# Boxplot para álcool
+sns.boxplot(ax=axes[1, 1], data=vinhos, y='alcool')
+axes[1, 1].set_title('Boxplot - Álcool')
+
+plt.tight_layout()
+plt.show()
+
+# Criando boxplots segregados por classe
+fig, axes = plt.subplots(2, 2, figsize=(14, 10))
+
+# Boxplot para magnésio segregado por classe
+vinhos.boxplot(column='magnesio', by='classe', ax=axes[0, 0])
+axes[0, 0].set_title('Magnésio por Classe')
+axes[0, 0].set_ylabel('Magnésio')
+
+# Boxplot para fenóis totais segregado por classe
+vinhos.boxplot(column='fenois_totais', by='classe', ax=axes[0, 1])
+axes[0, 1].set_title('Fenóis Totais por Classe')
+axes[0, 1].set_ylabel('Fenóis Totais')
+
+# Boxplot para ácido málico segregado por classe
+vinhos.boxplot(column='acido_malico', by='classe', ax=axes[1, 0])
+axes[1, 0].set_title('Ácido Málico por Classe')
+axes[1, 0].set_ylabel('Ácido Málico')
+
+# Boxplot para álcool segregado por classe
+vinhos.boxplot(column='alcool', by='classe', ax=axes[1, 1])
+axes[1, 1].set_title('Álcool por Classe')
+axes[1, 1].set_ylabel('Álcool')
+
+plt.tight_layout()
+plt.show()
+
+
+# Criando histograma para fenóis totais com 10 bins
+plt.figure(figsize=(8, 6))
+plt.hist(vinhos['fenois_totais'], bins=10, color='skyblue', edgecolor='black')
+plt.title('Distribuição de Fenóis Totais')
+plt.xlabel('Fenóis Totais')
+plt.ylabel('Frequência')
+plt.show()
+
+
+# Filtrando os dados para a classe 3
+vinhos_classe_3 = vinhos[vinhos['classe'] == '3']
+
+# Criando histograma para fenóis totais da classe 3 com 10 bins
+plt.figure(figsize=(8, 6))
+plt.hist(vinhos_classe_3['fenois_totais'], bins=10, color='lightcoral', edgecolor='black')
+plt.title('Distribuição de Fenóis Totais (Classe 3)')
+plt.xlabel('Fenóis Totais')
+plt.ylabel('Frequência')
+plt.show()
