@@ -1,0 +1,23 @@
+from statistics import mean, median, mode
+
+def calcular_estatisticas(lista):
+    try:
+        media = mean(lista)
+        mediana = median(lista)
+        moda = mode(lista)
+    except:
+        moda = "Sem moda única (ou seja, mais de um valor tem a mesma frequência máxima)."
+
+    return {
+        'média': media,
+        'mediana': mediana,
+        'moda': moda
+    }
+
+# Exemplo de uso:
+lista_numeros = [1, 2, 3, 4, 4, 5, 5, 5, 6]
+resultado = calcular_estatisticas(lista_numeros)
+
+print("Média:", resultado['média'])
+print("Mediana:", resultado['mediana'])
+print("Moda:", resultado['moda'])
