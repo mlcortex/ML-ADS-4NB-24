@@ -1,0 +1,8 @@
+valores = [4, 6, 3, 4, 5, 8, 4, 2]
+Crie um notebook que apresente as seguintes informações sobre a lista:
+
+Valor máximo- 8
+Valor mínimo-2
+Média aritmética dos valores-4.5
+Mediana dos valores-4.0
+Desvio padrão dos valores-1.7320508075688772
