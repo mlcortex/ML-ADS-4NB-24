@@ -19,3 +19,5 @@ O repositório está organizado nas seguintes pastas principais:
 - `PROJETOS`: Projetos em equipe. Cada subpasta deve ter o nome da equipe e conter um README.md com os membros da equipe e a descrição do projeto.
 - `DATASETS`: Conjunto de datasets fornecidos para uso nas aulas e projetos.
 - `NOTEBOOKS_AULAS`: Notebooks e materiais das aulas, organizados pelo professor.
+
+..
