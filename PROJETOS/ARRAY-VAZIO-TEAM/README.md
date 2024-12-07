@@ -1,7 +1,7 @@
 
 # Equipe "Array vazio team"
 
-## Equipe (max 4 pessoas):
+## Equipe
 - Alessandro de Lucena - 01613750  
 - Cláudio Roberto da Silva Filho 01662336  
 - Marcello José Menezes de Medeiros Filho - 01345111
